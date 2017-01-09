@@ -1,3 +1,6 @@
+import string
+
+
 poem = open("test.txt")
 
 twain = open("twain.txt")
@@ -24,7 +27,10 @@ def create_twain_dict(twain):
     word_count = {}
     for line in twain:
         split_line = line.rstrip().split()
+
         for word in split_line:
+            for char in string.punctuation:
+                word = word.replace(char, "").lower()
             word_count[word] = word_count.get(word, 0) + 1
 
     for word, count in word_count.iteritems():
