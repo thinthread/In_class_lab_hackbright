@@ -1,9 +1,9 @@
 import string
-
+import sys
 
 poem = open("test.txt")
 
-twain = open("twain.txt")
+twain = open(sys.argv[0])
 
 
 
